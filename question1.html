@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>question 1</title>
+    <style>
+        .body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           
+            height: 100vh;
+        }
+        .container {
+            display: flex;
+            justify-content:center;
+            align-items: center;
+            border: 5px solid white;
+            text-align: center;
+        }
+        .parent {
+            background:bisque;
+            padding: 30px 40px;
+            border-radius: 10px;
+            width:fit-content;
+            text-align: center;
+        }
+        button {
+            padding: 8px 20px;
+            border: 1px solid #000;
+            border-radius: 4px;
+            background-color:RED;
+            cursor: pointer;
+            text-align: center;
+            font-size: 16px;
+
+        }
+        .button:hover {
+            background-color:white;
+            color:black;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <form class="parent">
+        <h1>Sum of First N Numbers</h1>
+        <div class="number">
+        <input type="number" id="num" placeholder="Enter a number"><br>
+
+        <button onclick="findSum()">Enter</button>
+
+        <div class="output" id="result"></div>
+        </div>
+    </form>
+</div>
+
+<script>
+    function findSum() {
+        let n = parseInt(document.getElementById("num").value);
+
+        if (isNaN(n) || n <= 0) {
+            document.getElementById("result").innerHTML = "Please enter a valid positive number!";
+            return;
+        }
+
+        // Formula: Sum = N * (N + 1) / 2
+        let sum = n * (n + 1) / 2;
+
+        document.getElementById("result").innerHTML = "Sum is " + sum;
+        event.preventDefault()
+    }
+</script>
+
+
+    
+</body>
+</html>

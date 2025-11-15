@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>question 2</title>
+    <style>
+        .body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           
+            height: 100vh;
+        }
+        .container {
+            display: flex;
+            justify-content:center;
+            align-items: center;
+            border: 5px solid white;
+            text-align: center;
+        }
+        .parent {
+            background:khaki;
+            padding: 30px 40px;
+            border-radius: 10px;
+            width:fit-content;
+            text-align: center;
+        }
+        button {
+            padding: 8px 20px;
+            border: 1px solid #000;
+            border-radius: 4px;
+            background-color:RED;
+            cursor: pointer;
+            text-align: center;
+            font-size: 16px;
+
+        }
+        .button:hover {
+            background-color:white;
+            color:black;
+        }
+        
+    </style>
+        
+</head>
+<body>
+    <div class="container">
+        <form class="parent">
+            <h1>Multiplication Table</h1>
+            <div class="number">
+            <label for="numbers">Enter numbers</label><br>
+            <input type="number" id="number"/>
+            <br>
+            <button class="button" onclick="generateTable()">Enter</button>
+            <br>
+            </div>
+            <div id="display"></div>
+    
+        </form>
+    </div>
+            
+    
+    <script>
+        function generateTable(){
+        var getData = document.getElementById("number").value;
+        var putData = document.getElementById("display");
+        var i, temp;
+        for(i=1; i<=10; i++){
+            putData.innerHTML+=getData+"X"+i+"="+getData*i+"<br>";
+        }
+        event.preventDefault()
+        }
+    </script>
+
+    
+</body>
+</html>

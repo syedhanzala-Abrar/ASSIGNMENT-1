@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>question 4</title>
+    <style>
+        .body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            display: flex;
+            justify-content:center;
+            align-items: center;
+            border: 5px solid white;
+            text-align: center;
+        }
+        .parent {
+            background:indianred;
+            padding: 30px 40px;
+            border-radius: 10px;
+            width:fit-content;
+            text-align: center;
+
+        }
+        button {
+            padding: 8px 20px;
+            border: 1px solid #000;
+            border-radius: 4px;
+            background-color:RED;
+            cursor: pointer;
+            text-align: center;
+            font-size: 16px;
+
+        }
+        .button:hover {
+            background-color:white;
+            color:black;
+        }
+        
+    </style>
+    </style>
+</head>
+<body>
+    <div class="container">
+    <form class="parent">
+    <h1>Grade Calculator</h1>
+    <div class="number"></div>
+
+    <input type="number" id="sub1" placeholder="Enter Marks for Subject 1"><br>
+    <input type="number" id="sub2" placeholder="Enter Marks for Subject 2"><br>
+    <input type="number" id="sub3" placeholder="Enter Marks for Subject 3"><br>
+
+    <button onclick="calculateGrade()">Calculate</button>
+
+    <div class="output" id="result"></div>
+    </form>
+</div>
+
+<script>
+    function calculateGrade() {
+        let m1 = parseFloat(document.getElementById("sub1").value);
+        let m2 = parseFloat(document.getElementById("sub2").value);
+        let m3 = parseFloat(document.getElementById("sub3").value);
+
+        if (isNaN(m1) || isNaN(m2) || isNaN(m3)) {
+            document.getElementById("result").innerHTML = "Please enter all three marks!";
+            return;
+        }
+
+        let total = m1 + m2 + m3;
+        let avg = total / 3;
+
+        let grade = "";
+        if (avg >= 90) grade = "A";
+        else if (avg >= 75) grade = "B";
+        else if (avg >= 60) grade = "C";
+        else grade = "Fail";
+
+        document.getElementById("result").innerHTML =
+            "Total: " + total + "<br>" +
+            "Average: " + avg.toFixed(2) + "<br>" +
+            "Grade: " + grade;
+            event.preventDefault()
+    }
+</script>
+</body>
+</html>

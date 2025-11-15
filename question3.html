@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>question 3</title>
+    <style>
+        .body {
+            background-color:black ;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            height: 100vh;
+        }
+        .container {
+            display: flex;
+            justify-content:center;
+            align-items: center;
+            border: 5px solid white;
+            text-align: center;
+            
+        }
+        .parent {
+            background:lightsalmon;
+            padding: 30px 40px;
+            border-radius: 10px;
+            width: fit-content;
+            text-align: center;
+            
+        }
+       
+        button {
+            padding: 8px 20px;
+            border: 1px solid #000;
+            border-radius: 4px;
+            background-color:RED;
+            cursor: pointer;
+            text-align: center;
+            font-size: 16px;
+
+        }
+        .button:hover {
+            background-color:white;
+            color:black;
+           
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form class="parent">
+            <h1>Pattern Printer</h1>
+            <div class="number">
+            <label for="numbers">Enter numbers</label><br>
+            <input type="text" id="n1">
+            <br>
+            <button class="button" type="button" onclick="pattern()">Enter</button>
+            <br>
+            </div>
+            <div id="display"></div>
+    
+        </form>
+    </div>
+    <script>
+        function pattern()
+        {
+        var a=document.getElementById("n1").value;
+        var putData = document.getElementById("display");
+        var i, temp;
+        for(i=1; i<=a; i++)
+    {
+        for(j=1; j<=i; j++)
+        {
+        document.write("*")
+        }
+        document.write("<br>")
+    }
+}
+
+    </script>
+    
+</body>
+</html>
