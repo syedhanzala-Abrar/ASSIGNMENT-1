@@ -50,11 +50,11 @@
     <h1>Grade Calculator</h1>
     <div class="number"></div>
 
-    <input type="number" id="sub1" placeholder="Enter Marks for Subject 1">
+    <input type="number" id="English" placeholder="Enter Marks for Subject 1">
     <br>
-    <input type="number" id="sub2" placeholder="Enter Marks for Subject 2">
+    <input type="number" id="Maths" placeholder="Enter Marks for Subject 2">
     <br>
-    <input type="number" id="sub3" placeholder="Enter Marks for Subject 3">
+    <input type="number" id="Physics" placeholder="Enter Marks for Subject 3">
     <br>
 
     <button onclick="calculateGrade()">Calculate</button>
@@ -65,9 +65,9 @@
 
 <script>
     function calculateGrade() {
-        let m1 = parseFloat(document.getElementById("sub1").value);
-        let m2 = parseFloat(document.getElementById("sub2").value);
-        let m3 = parseFloat(document.getElementById("sub3").value);
+        let m1 = parseFloat(document.getElementById("English").value);
+        let m2 = parseFloat(document.getElementById("Maths").value);
+        let m3 = parseFloat(document.getElementById("Physics").value);
 
         if (isNaN(m1) || isNaN(m2) || isNaN(m3)) {
             document.getElementById("result").innerHTML = "Please enter all three marks!";
